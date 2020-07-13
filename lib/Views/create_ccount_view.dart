@@ -1,6 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:loginfibasee/Firebase/user_firebase.dart';
 import 'package:loginfibasee/Utils/Constants/app_constants.dart';
 import 'package:loginfibasee/Utils/Extension/string_extension.dart';
 import 'package:lottie/lottie.dart';
@@ -79,8 +79,11 @@ class _CreateAccountViewState extends State<CreateAccountView> {
                   FlatButton(
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
-                        print(email + "   " + password);
-                        createAccountFirebase();
+                        UserFirebase()..createAccountFirebase(email, password);
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (_) => LoginView()),
+                            (Route<dynamic> route) => false);
                       } else {
                         setState(() {
                           val = true;
@@ -115,19 +118,5 @@ class _CreateAccountViewState extends State<CreateAccountView> {
         ),
       ),
     );
-  }
-
-  void createAccountFirebase() {
-    FirebaseAuth.instance
-        .createUserWithEmailAndPassword(email: email, password: password)
-        .then((value) {
-      print("object");
-      Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (_) => LoginView()),
-          (Route<dynamic> route) => false);
-    }).catchError((onError) {
-      print(onError);
-    });
   }
 }
