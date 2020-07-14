@@ -8,4 +8,16 @@ class UserFirebase {
     _firebaseAuth.createUserWithEmailAndPassword(
         email: email, password: password);
   }
+
+  void signinFirebase(String email, String password) {
+    try {
+      _firebaseAuth
+          .signInWithEmailAndPassword(email: email, password: password)
+          .then((value) {
+        print(value.user.uid);
+      }).catchError((onError) {});
+    } catch (e) {
+      print(e);
+    }
+  }
 }
