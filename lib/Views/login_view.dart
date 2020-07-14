@@ -19,10 +19,11 @@ class _LoginViewState extends State<LoginView> {
   double radius = 30;
   @override
   Widget build(BuildContext context) {
+    var inset = MediaQuery.of(context).viewInsets.bottom;
     return Scaffold(
       body: Column(
         mainAxisSize: MainAxisSize.max,
-        children: [buildLottieAsset(), buildLoginForm()],
+        children: [buildLottieAsset(inset), buildLoginForm()],
       ),
     );
   }
@@ -122,13 +123,16 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 
-  Widget buildLottieAsset() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 40, bottom: 20),
-      child: SizedBox(
-        height: 250,
-        child: Center(
-          child: Lottie.asset(AppConstants.lottie_world),
+  Widget buildLottieAsset(double inset) {
+    return Visibility(
+      visible: inset == 0 ? true : false,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 40, bottom: 20),
+        child: SizedBox(
+          height: 250,
+          child: Center(
+            child: Lottie.asset(AppConstants.lottie_world),
+          ),
         ),
       ),
     );

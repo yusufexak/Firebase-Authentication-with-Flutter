@@ -19,10 +19,11 @@ class _CreateAccountViewState extends State<CreateAccountView> {
 
   @override
   Widget build(BuildContext context) {
+    var inset = MediaQuery.of(context).viewInsets.bottom;
     return Scaffold(
       body: Column(
         mainAxisSize: MainAxisSize.max,
-        children: [buildLottieAsset(), buildLoginForm()],
+        children: [buildLottieAsset(inset), buildLoginForm()],
       ),
     );
   }
@@ -108,13 +109,16 @@ class _CreateAccountViewState extends State<CreateAccountView> {
     );
   }
 
-  Widget buildLottieAsset() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 40, bottom: 20),
-      child: SizedBox(
-        height: 250,
-        child: Center(
-          child: Lottie.asset(AppConstants.lottie_world),
+  Widget buildLottieAsset(double inset) {
+    return Visibility(
+      visible: inset == 0 ? true : false,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 40, bottom: 20),
+        child: SizedBox(
+          height: 250,
+          child: Center(
+            child: Lottie.asset(AppConstants.lottie_world),
+          ),
         ),
       ),
     );
