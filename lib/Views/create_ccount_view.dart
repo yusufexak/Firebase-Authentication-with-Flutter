@@ -4,7 +4,6 @@ import 'package:loginfibasee/Firebase/user_firebase.dart';
 import 'package:loginfibasee/Utils/Constants/app_constants.dart';
 import 'package:loginfibasee/Utils/Extension/string_extension.dart';
 import 'package:lottie/lottie.dart';
-
 import 'login_view.dart';
 
 class CreateAccountView extends StatefulWidget {
@@ -17,6 +16,7 @@ class _CreateAccountViewState extends State<CreateAccountView> {
   bool val = false;
   final _formKey = GlobalKey<FormState>();
   double radius = 30;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
