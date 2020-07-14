@@ -1,6 +1,13 @@
-# loginfibasee
+# Firebase Authentication with Flutter
 
-A new Flutter project.
+Firebase authentication kullanılarak kayıt olma ve giriş işlemleri yapılmıştır. Giriş yaptıktan sonra Mobx kullanılarak sayaç dahil edilmiştir.
+
+## Projede Olanlar
+
+- Mobx
+- String email extansion
+- Lottie Animation
+- Firebase Authentication
 
 ## Getting Started
 
