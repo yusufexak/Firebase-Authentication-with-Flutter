@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:mobx/mobx.dart';
 
 part 'welcome_view_mode.g.dart';
