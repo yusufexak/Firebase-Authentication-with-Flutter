@@ -8,6 +8,7 @@ Firebase authentication kullanılarak kayıt olma ve giriş işlemleri yapılmı
 - String email extansion
 - Lottie Animation
 - Firebase Authentication
+- Firebase Push Notification
 
 ## Getting Started
 
