@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:loginfibasee/Firebase/user_firebase.dart';
 import 'package:loginfibasee/Utils/Constants/app_constants.dart';
 import 'package:loginfibasee/Utils/Extension/string_extension.dart';
+import 'package:loginfibasee/Views/welcome_view.dart';
 import 'package:lottie/lottie.dart';
 
 import 'create_ccount_view.dart';
@@ -82,6 +83,11 @@ class _LoginViewState extends State<LoginView> {
                       if (_formKey.currentState.validate()) {
                         print(email + "   " + password);
                         UserFirebase()..signinFirebase(email, password);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => WelcomeView(),
+                            ));
                       } else {
                         setState(() {
                           val = true;

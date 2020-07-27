@@ -10,6 +10,12 @@ class WelcomeView extends StatefulWidget {
 class _WelcomeViewState extends State<WelcomeView> {
   final vm = WelcomeViewModel();
   @override
+  void initState() {
+    super.initState();
+    vm.pns.initialise();
+  }
+
+  @override
   Widget build(BuildContext context) {
     print(vm.toString());
 
