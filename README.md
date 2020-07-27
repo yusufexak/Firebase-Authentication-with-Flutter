@@ -9,6 +9,7 @@ Firebase authentication kullanılarak kayıt olma ve giriş işlemleri yapılmı
 - Lottie Animation
 - Firebase Authentication
 - Firebase Push Notification
+- Signal Notification
 
 ## Getting Started
 

@@ -13,6 +13,7 @@ class _WelcomeViewState extends State<WelcomeView> {
   void initState() {
     super.initState();
     vm.pns.initialise();
+    vm.insOneSignal();
   }
 
   @override
